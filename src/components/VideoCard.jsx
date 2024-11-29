@@ -16,37 +16,53 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
   return (
     <Card
       sx={{
-        width: { xs: "100%",  md: "320px" },
+        width: { xs: "92vw", sm: "358px", md: "300px" },
         boxShadow: "none",
         borderRadius: 2,
+        margin: "auto",
       }}
     >
-      
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
+          component="img" 
           image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
           alt={snippet?.title || demoVideoTitle}
-          sx={{ width: "100%", height: 180 }}
+          sx={{
+            width: "100%",
+            height: { xs: 170, sm: 180 },
+            objectFit: "cover", 
+          }}
         />
       </Link>
 
-      <CardContent sx={{ backgroundColor: "#1e1e1e", height: "106px" }}>
+      <CardContent
+        sx={{
+          backgroundColor: "#1e1e1e",
+          height: { xs: "auto", sm: "80px" }, 
+          padding: { xs: 1, sm: 2 },
+        }}
+      >
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
           <Typography
             variant="subtitle1"
             fontWeight="bold"
             color="#FFF"
-            noWrap
+            noWrap 
+            sx={{
+              display: "-webkit-box", 
+              WebkitLineClamp: 2, 
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
           >
             {snippet?.title || demoVideoTitle}
           </Typography>
         </Link>
         <Link to={snippet?.channelId ? `/channel/${snippet.channelId}` : demoChannelUrl}>
-          <Typography variant="subtitle2" color="gray" mt={1}>
+          <Typography variant="subtitle2" color="gray" mt={1} noWrap>
             {snippet?.channelTitle || demoChannelTitle}
-            <CheckCircle
-              sx={{ fontSize: 12, color: "gray", ml: "5px" }}
-            />
+            <CheckCircle sx={{ fontSize: 12, color: "gray", ml: "5px" }} />
           </Typography>
         </Link>
       </CardContent>
