@@ -1,5 +1,5 @@
 # YOUTUBE CLONE USING REACT JS 
-## [Watch Live Here](https://674b92e1e88c34cc06e3ffc0--fascinating-gumdrop-842408.netlify.app/)
+## [Watch Live Here](https://fascinating-gumdrop-842408.netlify.app/)
 
 # Project Dependencies
 
