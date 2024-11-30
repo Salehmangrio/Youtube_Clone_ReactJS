@@ -2,18 +2,15 @@ import { Stack, Box } from '@mui/material';
 import React from 'react';
 import { VideoCard, ChannelCard } from './';
 
-const Videos = ({ videos }) => {
+const Videos = ({ videos ,direction="row"}) => {
   
-  if (!videos || !Array.isArray(videos)) {
-    return <div>Loading videos...</div>; 
-  }
+  if (!videos?.length) return 'Loading...';
+
 
   return (
-    <Stack 
-    direction="row" 
-    flexWrap="wrap" justifyContent="start" gap={1}
-    margin="auto"
-    >
+
+    <Stack direction={direction} flexWrap="wrap" justifyContent="start" >
+
       {videos.map((item, ind) => (
         <Box key={ind}>
           {item.id.videoId && <VideoCard video={item} />}

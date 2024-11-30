@@ -32,10 +32,10 @@ const ChannelDetail = () => {
             zIndex: 10,
             width: "100%",
             height: {
-              xs: "170px", // Mobile
-              sm: "250px", // Tablets
-              md: "300px", // Laptops
-              lg: "350px", // Large screens
+              xs: "170px", 
+              sm: "250px", 
+              md: "300px", 
+              lg: "350px", 
             },
           }}
         />
