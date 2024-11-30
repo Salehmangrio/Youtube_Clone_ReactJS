@@ -1,5 +1,4 @@
 # YOUTUBE CLONE USING REACT JS 
-## Project is under development
 
 # Project Dependencies
 
