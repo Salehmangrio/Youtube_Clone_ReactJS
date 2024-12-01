@@ -19,7 +19,7 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
         width: { xs: "92vw", sm: "358px", md: "300px" },
         boxShadow: "none",
         borderRadius: 2,
-        margin: "auto",
+        margin: "6px",
       }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
@@ -28,7 +28,7 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
           image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
           alt={snippet?.title || demoVideoTitle}
           sx={{
-            width: "100%",
+            width: {xs:'100%',sm:'358px', md:'300px'},
             height: { xs: 170, sm: 180 },
             objectFit: "cover", 
           }}
